@@ -1,0 +1,14 @@
+t1 = int(input())
+l1 = []
+for i in range(t1):
+    l1.append(input())
+
+t2 = int(input())
+l2 = []
+for i in range(t2):
+    l2.append(input())
+
+l1.extend(l2)
+l1.sort()
+for nome in l1:
+    print(nome)

@@ -1,0 +1,11 @@
+import math
+n = int(input())
+numeros = []
+for _ in range(n):
+    numeros.append(float(input()))
+media = sum(numeros) / len(numeros)
+soma = 0
+for i in numeros:
+    soma += ((i - media) ** 2)
+desvio = math.sqrt(soma / (len(numeros) - 1))
+print(f'{desvio:.8f}')
