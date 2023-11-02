@@ -1,12 +1,14 @@
-while True:
-    try:
-        frase = input()
-        f = frase.lower().replace('-', ' ').split()
-        for i in f:
-            if 'c' not in f[0] or f[1]:
-               print('BUG')
-            else:
-                print('GRACE HOPPER') 
-        
-    except EOFError:
-        break
+try:
+    while True:
+        resultado = 'GRACE HOPPER'
+        cobol = 'cobol'
+
+        palavras = input().lower().split('-')
+
+        for i in range(len(palavras)):
+            if palavras[i][0] != cobol[i]:
+                resultado = 'BUG'
+                break
+        print(resultado)  
+except EOFError:
+    pass
