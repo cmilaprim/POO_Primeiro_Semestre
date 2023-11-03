@@ -1,23 +1,20 @@
+teste = 1
 while True:
-    quantidade = list()
-    ocorrencia = 0
-    num_mais_aparece = ' '
-    teste = 0
-    num_aeroportos, num_voo = [int(w) for w in input().split()]
-    if num_voo == 0:
+    aeroportos, num_voo = [int(w) for w in input().split()]
+    if aeroportos and num_voo == 0:
         break
-    else:   
+    else:
+        quantidade = [0] * (aeroportos + 1)
         for i in range(num_voo):
             partida, chegada = [int(w) for w in input().split()]
-            quantidade.append(partida)
-            quantidade.append(chegada)
-        for num in set(quantidade):
-            total = quantidade.count(num)
-            teste += 1
-            if total > ocorrencia:
-                ocorrencia = total               
-                num_mais_aparece = num
-    print(f'Teste {teste}')
-    print(num_mais_aparece)          
-            
-            
+            quantidade[partida] += 1
+            quantidade [chegada] += 1
+        maior_quantidade = max(quantidade)
+        
+        codigo_aero = []
+        for cod_aero in range(1, aeroportos + 1):
+            if quantidade[cod_aero] == maior_quantidade:
+                codigo_aero.append(cod_aero)
+        print(f'Teste {teste}')
+        print(*codigo_aero)
+        teste += 1
