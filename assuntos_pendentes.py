@@ -1,6 +1,11 @@
-assunto = input().split()
-if len(assunto) %  2 == 0:
-    print('Partiu RU!')
+codigo = input()
+x = 0
+for parenteses in codigo:
+    if parenteses == '(':
+        x += 1
+    elif x > 0 and parenteses == ')':
+        x -= 1
+if x == 0:
+    print("Partiu RU!")
 else:
-    x = len(assunto) % 2 
-    print(f'Ainda temos {x} assunto(s) pendente(s)!')
+    print(f"Ainda temos {x} assunto(s) pendente(s)!")
